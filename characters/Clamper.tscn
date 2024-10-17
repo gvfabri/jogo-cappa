@@ -711,6 +711,8 @@ parameters/conditions/idle = false
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(-21, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_ic46o")
@@ -718,6 +720,8 @@ disabled = true
 
 [node name="Hitbox2" type="Area2D" parent="."]
 position = Vector2(21, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2"]
 shape = SubResource("RectangleShape2D_ic46o")
