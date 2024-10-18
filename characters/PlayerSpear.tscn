@@ -268,6 +268,8 @@ states/walk/position = Vector2(452, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qpka3"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jfg1d"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_2ecmn"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_rj8sw"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_e2rp3"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_kwmcv"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_jcenq"), "jump", "death", SubResource("AnimationNodeStateMachineTransition_qv8sp"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_1ubdt")]
 
 [node name="PlayerSpear" type="CharacterBody2D" node_paths=PackedStringArray("health_component", "item")]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ug6ga")
 health_component = NodePath("HealthComponent")
 jump_height = -300.0

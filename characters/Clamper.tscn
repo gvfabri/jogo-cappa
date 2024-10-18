@@ -724,6 +724,8 @@ size = Vector2(26, 38)
 size = Vector2(79, 49)
 
 [node name="Clamper" type="StaticBody2D"]
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("1_24unr")
 
 [node name="DetectorArea" type="Area2D" parent="."]
@@ -782,6 +784,8 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="Hitbox" type="Area2D" parent="." groups=["attack"]]
 position = Vector2(-21, 0)
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("3_h3nmu")
 attack_owner = "Clamper"
 
@@ -791,6 +795,8 @@ disabled = true
 
 [node name="Hitbox2" type="Area2D" parent="." groups=["attack"]]
 position = Vector2(21, 0)
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("3_h3nmu")
 attack_owner = "Clamper"
 
