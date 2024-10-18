@@ -1,4 +1,5 @@
 extends Node2D
+class_name PlayerHandler
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
@@ -6,7 +7,7 @@ const JUMP_VELOCITY = -600.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var players = [$PlayerCharacter]
+@onready var players = [$PlayerCharacter, null, null, null]
 var selected_player
 
 func _ready():
@@ -43,3 +44,12 @@ func reset_stage():
 
 func change_player(num):
 	selected_player = players[num]
+
+func free_selected():
+	players[selected_player].queue_free()
+	players[selected_player] = null
+	for i in 4:
+		selected_player = (selected_player + 1) % 4
+	if players[selected_player] == null:
+		reset_stage()
+	change_player(selected_player)

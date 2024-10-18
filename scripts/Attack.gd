@@ -1,4 +1,4 @@
 extends Node
 class_name Attack
 
-var attack_damage: float
+@export var attack_damage: float = 1

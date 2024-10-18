@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr7whurmdg6gg"]
+[gd_scene load_steps=5 format=3 uid="uid://cr7whurmdg6gg"]
 
 [ext_resource type="PackedScene" uid="uid://cjlyn8d487vei" path="res://scenes/player_handler.tscn" id="2_5x3qc"]
 [ext_resource type="Texture2D" uid="uid://c1gk14asun40n" path="res://icon.svg" id="3_28moh"]
+[ext_resource type="PackedScene" uid="uid://blxw21reeuj4k" path="res://characters/Clamper.tscn" id="3_nkq1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6rqe"]
 size = Vector2(236, 20)
@@ -20,3 +21,7 @@ scale = Vector2(1.82676, 0.474375)
 texture = ExtResource("3_28moh")
 
 [node name="PlayerHandler" parent="." instance=ExtResource("2_5x3qc")]
+
+[node name="Clamper" parent="." instance=ExtResource("3_nkq1o")]
+position = Vector2(71, 4)
+scale = Vector2(2, 2)
