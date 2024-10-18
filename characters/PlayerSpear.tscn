@@ -1,37 +1,38 @@
-[gd_scene load_steps=26 format=3 uid="uid://cxexjis4lgnpt"]
+[gd_scene load_steps=27 format=3 uid="uid://bayn8vavaumm7"]
 
-[ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/AnimalEscape.png" id="1_4jako"]
-[ext_resource type="Script" path="res://scripts/Player.gd" id="1_igh0l"]
-[ext_resource type="PackedScene" uid="uid://cn6dh65t37a40" path="res://scenes/health_component.tscn" id="2_1soe2"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_ug6ga"]
+[ext_resource type="PackedScene" uid="uid://dnxka5ugdh543" path="res://characters/spear.tscn" id="2_h0yrm"]
+[ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/AnimalEscape.png" id="2_iri11"]
+[ext_resource type="PackedScene" uid="uid://cn6dh65t37a40" path="res://scenes/health_component.tscn" id="3_80hqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpmxq"]
 size = Vector2(14, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_puhgl"]
-atlas = ExtResource("1_4jako")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehwa4"]
+atlas = ExtResource("2_iri11")
+region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7gp6s"]
-atlas = ExtResource("1_4jako")
-region = Rect2(160, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6srcx"]
+atlas = ExtResource("2_iri11")
+region = Rect2(128, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cp4jr"]
-atlas = ExtResource("1_4jako")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgn47"]
+atlas = ExtResource("2_iri11")
+region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yoq5i"]
-atlas = ExtResource("1_4jako")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2dxh"]
+atlas = ExtResource("2_iri11")
+region = Rect2(96, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5a2l8"]
-atlas = ExtResource("1_4jako")
-region = Rect2(128, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y7tp"]
+atlas = ExtResource("2_iri11")
+region = Rect2(128, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_br83u"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rm6h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_puhgl")
+"texture": SubResource("AtlasTexture_ehwa4")
 }],
 "loop": true,
 "name": &"idle",
@@ -39,7 +40,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7gp6s")
+"texture": SubResource("AtlasTexture_6srcx")
 }],
 "loop": true,
 "name": &"jump",
@@ -47,13 +48,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cp4jr")
+"texture": SubResource("AtlasTexture_lgn47")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yoq5i")
+"texture": SubResource("AtlasTexture_b2dxh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5a2l8")
+"texture": SubResource("AtlasTexture_1y7tp")
 }],
 "loop": true,
 "name": &"walk",
@@ -221,10 +222,13 @@ states/walk/node = SubResource("AnimationNodeAnimation_p01r8")
 states/walk/position = Vector2(452, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qpka3"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jfg1d"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_2ecmn"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_rj8sw"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_e2rp3"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_kwmcv")]
 
-[node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
-script = ExtResource("1_igh0l")
+[node name="PlayerSpear" type="CharacterBody2D" node_paths=PackedStringArray("health_component", "item")]
+script = ExtResource("1_ug6ga")
 health_component = NodePath("HealthComponent")
-jump_height = -600.0
+jump_height = -300.0
+item = NodePath("Spear")
+
+[node name="Spear" parent="." instance=ExtResource("2_h0yrm")]
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 1.5)
@@ -232,10 +236,10 @@ shape = SubResource("RectangleShape2D_qpmxq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_br83u")
+sprite_frames = SubResource("SpriteFrames_5rm6h")
 animation = &"jump"
 
-[node name="HealthComponent" parent="." instance=ExtResource("2_1soe2")]
+[node name="HealthComponent" parent="." instance=ExtResource("3_80hqs")]
 
 [node name="HurtboxComponent" type="Area2D" parent="." groups=["player"]]
 

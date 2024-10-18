@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cd0u0j06jpuhe"
-path="res://.godot/imported/mina.png-1fff2c4d2de955a38c9a123a93ac3024.ctex"
+path="res://.godot/imported/mina.png-1b6153edd50e5d0659ced6361c8df96a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/mina.png"
-dest_files=["res://.godot/imported/mina.png-1fff2c4d2de955a38c9a123a93ac3024.ctex"]
+source_file="res://images/images/mina.png"
+dest_files=["res://.godot/imported/mina.png-1b6153edd50e5d0659ced6361c8df96a.ctex"]
 
 [params]
 

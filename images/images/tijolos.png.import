@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b62glvlgi0pba"
-path="res://.godot/imported/tijolos.png-f56f7428687c7d1920c712ab24574529.ctex"
+path="res://.godot/imported/tijolos.png-ae6e899912b383da077e09c6b07c9d72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/tijolos.png"
-dest_files=["res://.godot/imported/tijolos.png-f56f7428687c7d1920c712ab24574529.ctex"]
+source_file="res://images/images/tijolos.png"
+dest_files=["res://.godot/imported/tijolos.png-ae6e899912b383da077e09c6b07c9d72.ctex"]
 
 [params]
 

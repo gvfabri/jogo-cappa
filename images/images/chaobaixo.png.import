@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q0tyciw5v6uf"
-path="res://.godot/imported/chaobaixo.png-c78fbefec216cc0b3ff04db2b457ef93.ctex"
+path="res://.godot/imported/chaobaixo.png-0f115613a58dee4a356d4fe546d33a0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/chaobaixo.png"
-dest_files=["res://.godot/imported/chaobaixo.png-c78fbefec216cc0b3ff04db2b457ef93.ctex"]
+source_file="res://images/images/chaobaixo.png"
+dest_files=["res://.godot/imported/chaobaixo.png-0f115613a58dee4a356d4fe546d33a0a.ctex"]
 
 [params]
 

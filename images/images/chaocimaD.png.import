@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://l4ahw0vh86uf"
-path="res://.godot/imported/chaocimaD.png-7b4156f691f47ada4d2355f1c5bb8016.ctex"
+path="res://.godot/imported/chaocimaD.png-97cad8cd6a7f19e9c5a015dd6bedffa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/chaocimaD.png"
-dest_files=["res://.godot/imported/chaocimaD.png-7b4156f691f47ada4d2355f1c5bb8016.ctex"]
+source_file="res://images/images/chaocimaD.png"
+dest_files=["res://.godot/imported/chaocimaD.png-97cad8cd6a7f19e9c5a015dd6bedffa2.ctex"]
 
 [params]
 

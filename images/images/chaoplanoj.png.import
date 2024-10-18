@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crtuoywgwwqvq"
-path="res://.godot/imported/chaoplanoj.png-4cf78d6a99ced5b00d5ef1cac7a3d3ef.ctex"
+path="res://.godot/imported/chaoplanoj.png-de2eca86eaf915260638c3ce3d2f2ea7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/chaoplanoj.png"
-dest_files=["res://.godot/imported/chaoplanoj.png-4cf78d6a99ced5b00d5ef1cac7a3d3ef.ctex"]
+source_file="res://images/images/chaoplanoj.png"
+dest_files=["res://.godot/imported/chaoplanoj.png-de2eca86eaf915260638c3ce3d2f2ea7.ctex"]
 
 [params]
 

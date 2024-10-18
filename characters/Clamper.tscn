@@ -780,19 +780,21 @@ tree_root = SubResource("AnimationNodeStateMachine_o3vke")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="Hitbox" type="Area2D" parent="." groups=["attack"]]
+[node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("attack_owner") groups=["attack"]]
 position = Vector2(-21, 0)
 script = ExtResource("3_h3nmu")
 attack_damage = 2.0
+attack_owner = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_ic46o")
 disabled = true
 
-[node name="Hitbox2" type="Area2D" parent="." groups=["attack"]]
+[node name="Hitbox2" type="Area2D" parent="." node_paths=PackedStringArray("attack_owner") groups=["attack"]]
 position = Vector2(21, 0)
 script = ExtResource("3_h3nmu")
 attack_damage = 2.0
+attack_owner = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2"]
 shape = SubResource("RectangleShape2D_ic46o")
