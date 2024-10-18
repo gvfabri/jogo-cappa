@@ -1,6 +1,7 @@
 extends Node
 
 @onready var detector_area = $DetectorArea
+@onready var health_component = $Hurtbox
 
 var aware = false
 var attacking = false
@@ -40,3 +41,11 @@ func _on_attack_area_area_exited(area):
 		attack_detect -= 1
 	if (attack_detect <= 0):
 		attacking = false
+
+func die():
+	queue_free()
+
+
+func _on_hurtbox_area_entered(attack):
+	if attack.is_in_group("attack") && attack.attack_owner != self:
+		die()

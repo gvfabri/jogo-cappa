@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://co5vis41mcg5b"]
+
+[ext_resource type="Script" path="res://scripts/stage_selector.gd" id="1_2prj0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 456.0
+offset_top = 167.0
+offset_right = 630.0
+offset_bottom = 260.0
+text = "Estágio 1"
+script = ExtResource("1_2prj0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 486.0
+offset_top = 82.0
+offset_right = 599.0
+offset_bottom = 109.0
+text = "Animal Escape"
+text_direction = 1

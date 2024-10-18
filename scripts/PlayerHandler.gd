@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -600.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var camera = $Camera2D
-@onready var players = [$PlayerCharacter, $PlayerCharacter2, null, null]
+@onready var players = [$PlayerCharacter, $PlayerSpear, $PlayerTorch, $PlayerBomb]
 var selected_player
 
 func _ready():
@@ -66,7 +66,7 @@ func change_player(num):
 func free_selected():
 	players[selected_player].queue_free()
 	players[selected_player] = null
-	find_non_null_player()
+	await find_non_null_player()
 	if players[selected_player] == null:
 		reset_stage()
 	change_player(selected_player)

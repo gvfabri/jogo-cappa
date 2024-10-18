@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjlyn8d487vei"]
+[gd_scene load_steps=6 format=3 uid="uid://cjlyn8d487vei"]
 
 [ext_resource type="Script" path="res://scripts/PlayerHandler.gd" id="1_qbs0b"]
 [ext_resource type="PackedScene" uid="uid://cxexjis4lgnpt" path="res://characters/PlayerCharacter.tscn" id="2_p53yw"]
 [ext_resource type="PackedScene" uid="uid://bayn8vavaumm7" path="res://characters/PlayerSpear.tscn" id="3_2bxid"]
+[ext_resource type="PackedScene" uid="uid://bhj5tvhg5qgit" path="res://characters/PlayerBomb.tscn" id="4_rkrxv"]
+[ext_resource type="PackedScene" uid="uid://doyn3wx46i7x0" path="res://characters/PlayerTorch.tscn" id="5_2t4tu"]
 
 [node name="PlayerHandler" type="Node2D"]
 script = ExtResource("1_qbs0b")
@@ -12,5 +14,11 @@ zoom = Vector2(2, 2)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_p53yw")]
 
-[node name="PlayerCharacter2" parent="." instance=ExtResource("3_2bxid")]
+[node name="PlayerSpear" parent="." instance=ExtResource("3_2bxid")]
 position = Vector2(-16, 0)
+
+[node name="PlayerTorch" parent="." instance=ExtResource("5_2t4tu")]
+position = Vector2(-32, 0)
+
+[node name="PlayerBomb" parent="." instance=ExtResource("4_rkrxv")]
+position = Vector2(-48, 0)

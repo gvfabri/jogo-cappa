@@ -33,6 +33,7 @@ func jump():
 		velocity.y = jump_height
 
 func die():
+	print("DIED!")
 	get_parent().free_selected()
 
 func _on_hitbox_component_area_entered(attack):
