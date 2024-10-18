@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cxexjis4lgnpt"]
+[gd_scene load_steps=32 format=3 uid="uid://cxexjis4lgnpt"]
 
 [ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/AnimalEscape.png" id="1_4jako"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_igh0l"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpmxq"]
 size = Vector2(14, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w7jq"]
+atlas = ExtResource("1_4jako")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_puhgl"]
 atlas = ExtResource("1_4jako")
@@ -29,6 +33,14 @@ region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_br83u"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w7jq")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_puhgl")
@@ -172,13 +184,45 @@ tracks/1/keys = {
 "values": [0, 1, 2, 1]
 }
 
+[sub_resource type="Animation" id="Animation_mwh5l"]
+resource_name = "death"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_voipl"]
 _data = {
 "RESET": SubResource("Animation_xlaid"),
+"death": SubResource("Animation_mwh5l"),
 "idle": SubResource("Animation_fave8"),
 "jump": SubResource("Animation_uokkj"),
 "walk": SubResource("Animation_lit1l")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s2e3s"]
+animation = &"death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2inxj"]
 animation = &"idle"
@@ -212,14 +256,29 @@ advance_expression = "!velocity"
 advance_mode = 2
 advance_expression = "velocity.y"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l321p"]
+advance_mode = 2
+advance_expression = "dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ur4k7"]
+advance_mode = 2
+advance_expression = "dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l7ain"]
+advance_mode = 2
+advance_expression = "dead"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bcbag"]
+states/End/position = Vector2(899, 100)
+states/death/node = SubResource("AnimationNodeAnimation_s2e3s")
+states/death/position = Vector2(392, 27)
 states/idle/node = SubResource("AnimationNodeAnimation_2inxj")
 states/idle/position = Vector2(337, 100)
 states/jump/node = SubResource("AnimationNodeAnimation_7l00f")
 states/jump/position = Vector2(392, 216)
 states/walk/node = SubResource("AnimationNodeAnimation_p01r8")
 states/walk/position = Vector2(452, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qpka3"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jfg1d"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_2ecmn"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_rj8sw"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_e2rp3"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_kwmcv")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qpka3"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jfg1d"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_2ecmn"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_rj8sw"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_e2rp3"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_kwmcv"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_l321p"), "jump", "death", SubResource("AnimationNodeStateMachineTransition_ur4k7"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_l7ain")]
 
 [node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
 script = ExtResource("1_igh0l")

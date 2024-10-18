@@ -10,7 +10,6 @@ func _ready():
 
 
 func damage(attack: Attack):
-	print(attack)
 	health -= attack.attack_damage
 	
 	if health <= 0 && get_parent().has_method("die"):

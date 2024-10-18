@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -600.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var camera = $Camera2D
-@onready var players = [$PlayerCharacter, $PlayerSpear, $PlayerTorch, $PlayerBomb]
+@export var players = [$PlayerCharacter, $PlayerSpear, $PlayerTorch, $PlayerBomb]
 var selected_player
 
 func _ready():
@@ -33,6 +33,9 @@ func _physics_process(delta):
 	var player = players[selected_player]
 	var sprite = player.get_sprite()
 
+	if player.dead:
+		return
+	
 	# Add the gravity.
 	if not player.is_on_floor():
 		player.velocity.y += gravity * delta
@@ -52,21 +55,27 @@ func _physics_process(delta):
 func reset_stage():
 	get_tree().reload_current_scene()
 
-func find_non_null_player():
+func find_non_null_player(current_num):
+	var player = current_num
 	for i in 4:
-		selected_player = (selected_player + 1) % 4
-		if players[selected_player] != null:
-			break
+		player = (player + 1) % 4
+		if players[player] != null:
+			return player
+	return 0
 
 func change_player(num):
 	selected_player = num
 	if (players[selected_player] == null):
-		find_non_null_player()
+		selected_player = find_non_null_player(selected_player)
 
-func free_selected():
-	players[selected_player].queue_free()
-	players[selected_player] = null
-	await find_non_null_player()
-	if players[selected_player] == null:
+func free_char(selected_char):
+	var temp = selected_char
+	var next_player = null
+	next_player = await find_non_null_player(selected_char)
+	if players[next_player] == null:
 		reset_stage()
-	change_player(selected_player)
+	await get_tree().create_timer(1).timeout
+	if players[temp] != null:
+		players[temp].queue_free()
+		players[temp] = null
+	change_player(next_player)

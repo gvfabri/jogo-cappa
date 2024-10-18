@@ -5,9 +5,11 @@ class_name PlayerClass
 @export var health_component : HealthComponent
 @export var jump_height: float
 @export var item: ItemClass
+@export var char_num: int
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var dead = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +19,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
 
 func get_sprite():
 	return sprite
@@ -33,9 +34,11 @@ func jump():
 		velocity.y = jump_height
 
 func die():
-	print("DIED!")
-	get_parent().free_selected()
+	if (dead):
+		return
+	dead = true
+	await get_parent().free_char(char_num)
 
 func _on_hitbox_component_area_entered(attack):
-	if attack.is_in_group("attack") && attack.attack_owner != self:
+	if attack.is_in_group("attack") && attack.attack_owner != "Player":
 		health_component.damage(attack)

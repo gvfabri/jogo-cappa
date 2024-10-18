@@ -47,5 +47,5 @@ func die():
 
 
 func _on_hurtbox_area_entered(attack):
-	if attack.is_in_group("attack") && attack.attack_owner != self:
+	if attack.is_in_group("attack") && attack.attack_owner != "Clamper":
 		die()

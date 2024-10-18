@@ -16,6 +16,6 @@ func explode():
 	main.add_child(inst)
 
 func _on_hurtbox_area_entered(attack):
-	if (attack.is_in_group("torch attack")) && attack.attack_owner != self:
+	if (attack.is_in_group("torch attack")) && attack.attack_owner != "Barrel":
 		await explode()
 		die()
