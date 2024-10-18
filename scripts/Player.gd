@@ -7,6 +7,8 @@ class_name PlayerClass
 @export var item: ItemClass
 @export var char_num: int
 
+var ghost = preload("res://characters/CharacterGhost.tscn")
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var dead = false
@@ -37,7 +39,12 @@ func die():
 	if (dead):
 		return
 	dead = true
+	var inst = ghost.instantiate()
 	await get_parent().free_char(char_num)
+	inst.ghost = char_num
+	inst.global_position = global_position
+	get_tree().get_root().get_node("Main").add_child(inst)
+	queue_free()
 
 func _on_hitbox_component_area_entered(attack):
 	if attack.is_in_group("attack") && attack.attack_owner != "Player":

@@ -78,6 +78,10 @@ func free_char(selected_char):
 		reset_stage()
 	await get_tree().create_timer(1).timeout
 	if players[temp] != null:
-		players[temp].queue_free()
 		players[temp] = null
 	change_player(next_player)
+
+
+func _on_warp_to_area_2_area_entered(area):
+	print("Warp!")
+	get_tree().change_scene_to_file("res://scenes/phase_2.tscn")

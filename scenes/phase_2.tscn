@@ -1,64 +1,64 @@
 [gd_scene load_steps=34 format=3 uid="uid://ywj05yo3ej26"]
 
-[ext_resource type="Texture2D" uid="uid://cthsgv7jc4axt" path="res://images/images/fundo.png" id="1_80ufu"]
-[ext_resource type="Texture2D" uid="uid://drkq7erwa4sw3" path="res://images/images/chaopiso.png" id="2_lka4t"]
-[ext_resource type="Texture2D" uid="uid://cqjkng4mne1ry" path="res://images/images/rochas.png" id="3_2o3fl"]
-[ext_resource type="Texture2D" uid="uid://ckratfv4thspv" path="res://images/images/chaoplanoi.png" id="4_527oa"]
-[ext_resource type="Texture2D" uid="uid://b62glvlgi0pba" path="res://images/images/tijolos.png" id="5_muxec"]
-[ext_resource type="Texture2D" uid="uid://bybxyplutfely" path="res://images/images/vinhas2.png" id="6_ulycp"]
-[ext_resource type="Texture2D" uid="uid://cjrs87dnxkabq" path="res://images/images/vinhas.png" id="7_e1pej"]
-[ext_resource type="Texture2D" uid="uid://c3kl30ndo5iig" path="res://images/images/chaoesq.png" id="8_idukd"]
-[ext_resource type="Texture2D" uid="uid://dxka18bc201ar" path="res://images/images/chaodir.png" id="9_e4rt5"]
-[ext_resource type="Texture2D" uid="uid://dsqh4qm1thx4q" path="res://images/images/chaocimaE.png" id="10_yna2r"]
-[ext_resource type="Texture2D" uid="uid://l4ahw0vh86uf" path="res://images/images/chaocimaD.png" id="11_u5ylo"]
-[ext_resource type="Texture2D" uid="uid://isd6fojoif0r" path="res://images/images/chaobaixoE.png" id="12_fed2f"]
-[ext_resource type="Texture2D" uid="uid://pvi152sqgm3n" path="res://images/images/chaobaixoD.png" id="13_lniy4"]
-[ext_resource type="Texture2D" uid="uid://q0tyciw5v6uf" path="res://images/images/chaobaixo.png" id="14_rjttl"]
-[ext_resource type="Texture2D" uid="uid://bysk4vxltxud8" path="res://images/images/chao.png" id="15_u4f0f"]
-[ext_resource type="PackedScene" uid="uid://cjlyn8d487vei" path="res://scenes/player_handler.tscn" id="16_bqdck"]
-[ext_resource type="Texture2D" uid="uid://ttbj3rk1r072" path="res://images/AnimalEscape_Boss.png" id="17_idwva"]
+[ext_resource type="Texture2D" uid="uid://cthsgv7jc4axt" path="res://images/images/fundo.png" id="1_ldoaj"]
+[ext_resource type="Texture2D" uid="uid://drkq7erwa4sw3" path="res://images/images/chaopiso.png" id="2_iywdy"]
+[ext_resource type="Texture2D" uid="uid://cqjkng4mne1ry" path="res://images/images/rochas.png" id="3_bf2dy"]
+[ext_resource type="Texture2D" uid="uid://ckratfv4thspv" path="res://images/images/chaoplanoi.png" id="4_4gs42"]
+[ext_resource type="Texture2D" uid="uid://b62glvlgi0pba" path="res://images/images/tijolos.png" id="5_sitce"]
+[ext_resource type="Texture2D" uid="uid://bybxyplutfely" path="res://images/images/vinhas2.png" id="6_8ibs1"]
+[ext_resource type="Texture2D" uid="uid://cjrs87dnxkabq" path="res://images/images/vinhas.png" id="7_gfvw8"]
+[ext_resource type="Texture2D" uid="uid://c3kl30ndo5iig" path="res://images/images/chaoesq.png" id="8_0pe6c"]
+[ext_resource type="Texture2D" uid="uid://dxka18bc201ar" path="res://images/images/chaodir.png" id="9_5msrx"]
+[ext_resource type="Texture2D" uid="uid://dsqh4qm1thx4q" path="res://images/images/chaocimaE.png" id="10_vacjx"]
+[ext_resource type="Texture2D" uid="uid://l4ahw0vh86uf" path="res://images/images/chaocimaD.png" id="11_8oi2m"]
+[ext_resource type="Texture2D" uid="uid://isd6fojoif0r" path="res://images/images/chaobaixoE.png" id="12_ekn76"]
+[ext_resource type="Texture2D" uid="uid://pvi152sqgm3n" path="res://images/images/chaobaixoD.png" id="13_juw3w"]
+[ext_resource type="Texture2D" uid="uid://q0tyciw5v6uf" path="res://images/images/chaobaixo.png" id="14_rxhw1"]
+[ext_resource type="Texture2D" uid="uid://bysk4vxltxud8" path="res://images/images/chao.png" id="15_32a3j"]
+[ext_resource type="PackedScene" uid="uid://cjlyn8d487vei" path="res://scenes/player_handler.tscn" id="16_3mr1h"]
+[ext_resource type="Texture2D" uid="uid://ttbj3rk1r072" path="res://images/AnimalEscape_Boss.png" id="17_0q2bu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s1cx"]
-texture = ExtResource("1_80ufu")
+texture = ExtResource("1_ldoaj")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yiqxi"]
-texture = ExtResource("2_lka4t")
+texture = ExtResource("2_iywdy")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64bet"]
-texture = ExtResource("3_2o3fl")
+texture = ExtResource("3_bf2dy")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gx6d0"]
-texture = ExtResource("4_527oa")
+texture = ExtResource("4_4gs42")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1i6f"]
-texture = ExtResource("5_muxec")
+texture = ExtResource("5_sitce")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wphs"]
-texture = ExtResource("6_ulycp")
+texture = ExtResource("6_8ibs1")
 1:0/0 = 0
 2:0/0 = 0
 1:1/0 = 0
 2:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ti8rk"]
-texture = ExtResource("7_e1pej")
+texture = ExtResource("7_gfvw8")
 1:0/0 = 0
 2:0/0 = 0
 1:1/0 = 0
@@ -68,56 +68,56 @@ texture = ExtResource("7_e1pej")
 2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3nq6"]
-texture = ExtResource("8_idukd")
+texture = ExtResource("8_0pe6c")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpcgc"]
-texture = ExtResource("9_e4rt5")
+texture = ExtResource("9_5msrx")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r8x1f"]
-texture = ExtResource("10_yna2r")
+texture = ExtResource("10_vacjx")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cj5pf"]
-texture = ExtResource("11_u5ylo")
+texture = ExtResource("11_8oi2m")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbn5s"]
-texture = ExtResource("12_fed2f")
+texture = ExtResource("12_ekn76")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iw6cc"]
-texture = ExtResource("13_lniy4")
+texture = ExtResource("13_juw3w")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbpew"]
-texture = ExtResource("14_rjttl")
+texture = ExtResource("14_rxhw1")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ueccp"]
-texture = ExtResource("15_u4f0f")
+texture = ExtResource("15_32a3j")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -140,7 +140,7 @@ sources/12 = SubResource("TileSetAtlasSource_v1i6f")
 sources/13 = SubResource("TileSetAtlasSource_7wphs")
 sources/14 = SubResource("TileSetAtlasSource_ti8rk")
 
-[node name="phase2" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="TileMap2" type="TileMap" parent="."]
 texture_filter = 1
@@ -163,7 +163,7 @@ polygon = PackedVector2Array(126, 590, 124, 576, 140, 576, 141, 560, 159, 560, 1
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap2/StaticBody2D"]
 polygon = PackedVector2Array(-215, 1107, 4, 1103, -1, 126, 98, 127, 97, 332, 145, 332, 144, 129, 208, 130, 210, 157, 242, 159, 243, 192, 277, 193, 273, 349, 320, 351, 320, 192, 354, 193, 354, 162, 373, 161, 371, 130, 510, 128, 511, 159, 544, 161, 547, 190, 571, 190, 575, 209, 591, 209, 592, 224, 610, 227, 610, 239, 654, 238, 656, 162, 675, 160, 675, 350, 717, 350, 721, 175, 736, 173, 736, 126, 751, 127, 754, 146, 769, 148, 770, 432, 800, 431, 801, 192, 813, 194, 815, 179, 833, 176, 835, 160, 881, 159, 881, 178, 896, 177, 900, 208, 912, 207, 911, 243, 927, 242, 930, 275, 945, 274, 946, 303, 1006, 300, 1009, 161, 1215, 158, 1217, 0, 2, 1, 1, -78, -208, -79)
 
-[node name="PlayerHandler" parent="." instance=ExtResource("16_bqdck")]
+[node name="PlayerHandler" parent="." instance=ExtResource("16_3mr1h")]
 position = Vector2(1260, 639)
 
 [node name="Madeira" type="Node2D" parent="."]
@@ -171,7 +171,7 @@ position = Vector2(1260, 639)
 [node name="Sprite2D" type="Sprite2D" parent="Madeira"]
 texture_filter = 1
 position = Vector2(1380, 560)
-texture = ExtResource("17_idwva")
+texture = ExtResource("17_0q2bu")
 hframes = 10
 vframes = 10
 frame = 20
