@@ -6,6 +6,7 @@ class_name PlayerClass
 @export var jump_height: float
 @export var item: ItemClass
 @export var char_num: int
+@onready var main = get_tree().get_root().get_node("Main")
 
 var ghost = preload("res://characters/CharacterGhost.tscn")
 
@@ -43,7 +44,7 @@ func die():
 	await get_parent().free_char(char_num)
 	inst.ghost = char_num
 	inst.global_position = global_position
-	get_tree().get_root().get_node("Main").add_child(inst)
+	main.add_child(inst)
 	queue_free()
 
 func _on_hitbox_component_area_entered(attack):

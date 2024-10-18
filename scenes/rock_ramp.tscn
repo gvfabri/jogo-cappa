@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmwd7mcqp26r5"]
+
+[ext_resource type="Texture2D" uid="uid://cocta85kusclh" path="res://images/images/blocorochas.png" id="1_05lyd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2gy2e"]
+texture = ExtResource("1_05lyd")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_epn8e"]
+sources/0 = SubResource("TileSetAtlasSource_2gy2e")
+
+[node name="Rochas" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_epn8e")
+format = 2
+layer_0/tile_data = PackedInt32Array(2555985, 0, 0, 2621521, 0, 1, 2490450, 0, 0, 2555986, 0, 1, 2424915, 0, 0, 2490451, 0, 1, 2359380, 0, 0, 2424916, 0, 1, 2293845, 0, 1, 2359381, 0, 0, 2424917, 0, 1, 2228310, 0, 0, 2293846, 65536, 1, 2359382, 65536, 0, 2424918, 65536, 1, 2162775, 0, 1, 2162776, 65536, 1, 2228311, 0, 0, 2293847, 0, 1, 2228312, 65536, 0, 2293848, 65536, 1, 2359383, 0, 0, 2424919, 0, 1, 2359384, 65536, 0, 2424920, 65536, 1, 2621520, 0, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1426, 528, 1426, 608, 1346, 608, 1346, 624, 1330, 624, 1330, 640, 1314, 640, 1314, 656, 1280, 656, 1280, 640, 1296, 640, 1296, 624, 1312, 624, 1312, 608, 1328, 608, 1328, 592, 1344, 592, 1344, 576, 1360, 576, 1360, 560, 1375, 560, 1375, 544, 1392, 544, 1392, 528)
