@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://mj4xq7urxesr"]
+
+[ext_resource type="Script" path="res://scripts/spear_attack.gd" id="1_evaci"]
+[ext_resource type="Script" path="res://scripts/Attack.gd" id="2_icpui"]
+[ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/AnimalEscape.png" id="3_3tjom"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1oau"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcqgb"]
+atlas = ExtResource("3_3tjom")
+region = Rect2(0, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8w1f"]
+atlas = ExtResource("3_3tjom")
+region = Rect2(32, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h2ug"]
+atlas = ExtResource("3_3tjom")
+region = Rect2(64, 352, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8pgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcqgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8w1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h2ug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TorchAttack" type="Node2D"]
+script = ExtResource("1_evaci")
+
+[node name="Area2D" type="Area2D" parent="." groups=["torch attack"]]
+script = ExtResource("2_icpui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_m1oau")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_n8pgo")
+frame_progress = 0.173965
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

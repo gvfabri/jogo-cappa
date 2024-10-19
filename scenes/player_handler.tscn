@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjlyn8d487vei"]
+
+[ext_resource type="Script" path="res://scripts/PlayerHandler.gd" id="1_qbs0b"]
+[ext_resource type="PackedScene" uid="uid://cxexjis4lgnpt" path="res://characters/PlayerCharacter.tscn" id="2_p53yw"]
+[ext_resource type="PackedScene" uid="uid://bayn8vavaumm7" path="res://characters/PlayerSpear.tscn" id="3_2bxid"]
+[ext_resource type="PackedScene" uid="uid://bhj5tvhg5qgit" path="res://characters/PlayerBomb.tscn" id="4_rkrxv"]
+[ext_resource type="PackedScene" uid="uid://doyn3wx46i7x0" path="res://characters/PlayerTorch.tscn" id="5_2t4tu"]
+[ext_resource type="Texture2D" uid="uid://ba5hlmprribf5" path="res://images/images/LightTexture.png" id="5_5c67i"]
+
+[node name="PlayerHandler" type="Node2D"]
+script = ExtResource("1_qbs0b")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_p53yw")]
+
+[node name="PlayerSpear" parent="." instance=ExtResource("3_2bxid")]
+position = Vector2(-16, 0)
+
+[node name="PlayerTorch" parent="." instance=ExtResource("5_2t4tu")]
+position = Vector2(-32, 0)
+
+[node name="Node2D" type="Node2D" parent="PlayerTorch"]
+
+[node name="PointLight2D" type="PointLight2D" parent="PlayerTorch/Node2D"]
+position = Vector2(8, -4)
+color = Color(1, 1, 0.380392, 1)
+texture = ExtResource("5_5c67i")
+texture_scale = 3.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="PlayerTorch/Node2D"]
+position = Vector2(8, -3)
+color = Color(1, 1, 0.380392, 1)
+energy = 0.7
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("5_5c67i")
+texture_scale = 2.0
+
+[node name="PlayerBomb" parent="." instance=ExtResource("4_rkrxv")]
+position = Vector2(-48, 0)
