@@ -84,5 +84,4 @@ func free_char(selected_char):
 
 
 func _on_warp_to_area_2_area_entered(_area):
-	print("Warp!")
 	get_tree().change_scene_to_file("res://scenes/phase_2.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ywj05yo3ej26"]
+[gd_scene load_steps=42 format=3 uid="uid://ywj05yo3ej26"]
 
 [ext_resource type="Texture2D" uid="uid://cthsgv7jc4axt" path="res://images/images/fundo.png" id="1_ldoaj"]
 [ext_resource type="Texture2D" uid="uid://drkq7erwa4sw3" path="res://images/images/chaopiso.png" id="2_iywdy"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://scripts/WoodSupport.gd" id="17_m5lt0"]
 [ext_resource type="Script" path="res://scripts/Attack.gd" id="20_kshro"]
 [ext_resource type="PackedScene" uid="uid://blxw21reeuj4k" path="res://characters/Clamper.tscn" id="21_2a5xe"]
+[ext_resource type="AudioStream" uid="uid://byx5gsban1tk5" path="res://music/back-to-the-volcano-castle-free-halloween-music-scloudtomp3downloader.com_(chosic.com).mp3" id="22_7a334"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s1cx"]
 texture = ExtResource("1_ldoaj")
@@ -238,5 +239,9 @@ scale = Vector2(2, 2)
 [node name="Clamper3" parent="." instance=ExtResource("21_2a5xe")]
 position = Vector2(1754, 340)
 scale = Vector2(2, 2)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_7a334")
+autoplay = true
 
 [connection signal="area_entered" from="Madeira/DetectAttack" to="Madeira" method="_on_detect_attack_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b4gnrsgrfhpnd"]
+[gd_scene load_steps=32 format=3 uid="uid://b4gnrsgrfhpnd"]
 
 [ext_resource type="Texture2D" uid="uid://dccxhb5jopggv" path="res://images/images/cavetiles.png" id="1_ueyp3"]
 [ext_resource type="Texture2D" uid="uid://dk8hqgmpt6qif" path="res://images/images/chaoterra.png" id="2_80oj0"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://scenes/Webs.gd" id="11_smvpy"]
 [ext_resource type="PackedScene" uid="uid://cn6dh65t37a40" path="res://scenes/health_component.tscn" id="12_bvtfp"]
 [ext_resource type="Script" path="res://scripts/Barrel.gd" id="14_p6yvh"]
+[ext_resource type="AudioStream" uid="uid://bc5lql2eckyvi" path="res://music/dark-forest(chosic.com).mp3" id="17_gw4ng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xmtl"]
 texture = ExtResource("1_ueyp3")
@@ -209,14 +210,12 @@ collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Webs/StaticBody2D"]
 position = Vector2(0.177391, -1.56277)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bjgeb")
 
 [node name="Hurtbox" type="Area2D" parent="Webs"]
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Webs/Hurtbox"]
 position = Vector2(0.177391, -1.56277)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bjgeb")
 
 [node name="Bricks" type="Node2D" parent="."]
@@ -286,6 +285,11 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WarpToArea2"]
 position = Vector2(25.5, -16)
 shape = SubResource("RectangleShape2D_sgi4p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_gw4ng")
+autoplay = true
+bus = &"Music"
 
 [connection signal="area_entered" from="Webs/Hurtbox" to="Webs" method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="Bricks/Hurtbox" to="Bricks" method="_on_hurtbox_area_entered"]

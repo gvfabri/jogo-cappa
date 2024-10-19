@@ -26,3 +26,5 @@ position = Vector2(-48, 0)
 
 [node name="jump_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_52plg")
+volume_db = -4.0
+bus = &"SFX"
