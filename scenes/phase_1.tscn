@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://blxw21reeuj4k" path="res://characters/Clamper.tscn" id="6_l67ct"]
 [ext_resource type="Texture2D" uid="uid://cnwkhwwb6b5ta" path="res://images/images/tree3.png" id="7_csnq8"]
 [ext_resource type="Texture2D" uid="uid://cgqp3i5igmoly" path="res://images/images/tree4.png" id="8_brtyd"]
-[ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/images/AnimalEscape.png" id="10_xuug4"]
+[ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/AnimalEscape.png" id="10_xuug4"]
 [ext_resource type="Texture2D" uid="uid://cdc6illp37lor" path="res://images/images/tree.png" id="11_gevwu"]
 [ext_resource type="Script" path="res://scripts/Bricks.gd" id="11_gfxss"]
 [ext_resource type="Script" path="res://scenes/Webs.gd" id="11_smvpy"]
