@@ -179,18 +179,22 @@ position = Vector2(328, -80)
 texture = ExtResource("4_l46jd")
 
 [node name="Tree" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(611, -48)
 texture = ExtResource("11_gevwu")
 
 [node name="Tree2" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(209, -48)
 texture = ExtResource("6_2grg2")
 
 [node name="Tree3" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(-50, -49)
 texture = ExtResource("7_csnq8")
 
 [node name="Tree4" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(451, -48)
 texture = ExtResource("8_brtyd")
 

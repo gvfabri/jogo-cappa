@@ -1,22 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://co5vis41mcg5b"]
+[gd_scene load_steps=3 format=3 uid="uid://co5vis41mcg5b"]
 
 [ext_resource type="Script" path="res://scripts/stage_selector.gd" id="1_2prj0"]
+[ext_resource type="Texture2D" uid="uid://b3houmxox0a5i" path="res://images/WayOfRevival.png" id="2_4djn7"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Scene Selector" type="Node2D"]
+script = ExtResource("1_2prj0")
+
+[node name="WayOfRevival" type="Sprite2D" parent="."]
+position = Vector2(577, 503)
+scale = Vector2(1.21667, 1.01793)
+texture = ExtResource("2_4djn7")
 
 [node name="Button" type="Button" parent="."]
 texture_filter = 1
-offset_left = 456.0
-offset_top = 167.0
-offset_right = 630.0
-offset_bottom = 260.0
+offset_left = 255.0
+offset_top = 462.0
+offset_right = 429.0
+offset_bottom = 555.0
 text = "Estágio 1"
-script = ExtResource("1_2prj0")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 486.0
-offset_top = 82.0
-offset_right = 599.0
-offset_bottom = 109.0
-text = "Animal Escape"
-text_direction = 1
+[node name="Button2" type="Button" parent="."]
+texture_filter = 1
+offset_left = 718.0
+offset_top = 463.0
+offset_right = 903.0
+offset_bottom = 570.0
+scale = Vector2(0.946346, 0.849482)
+text = "Estágio 2"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 128.0
+offset_right = 661.0
+offset_bottom = 200.0
+text = "Estágio 3
+(WIP)"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ywj05yo3ej26"]
+[gd_scene load_steps=43 format=3 uid="uid://ywj05yo3ej26"]
 
 [ext_resource type="Texture2D" uid="uid://cthsgv7jc4axt" path="res://images/images/fundo.png" id="1_ldoaj"]
 [ext_resource type="Texture2D" uid="uid://drkq7erwa4sw3" path="res://images/images/chaopiso.png" id="2_iywdy"]
@@ -154,6 +154,9 @@ size = Vector2(77, 69)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7q2e"]
 size = Vector2(210, 293)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qstxj"]
+size = Vector2(41, 246)
+
 [node name="Main" type="Node2D"]
 
 [node name="TileMap2" type="TileMap" parent="."]
@@ -244,4 +247,14 @@ scale = Vector2(2, 2)
 stream = ExtResource("22_7a334")
 autoplay = true
 
+[node name="WarpToArea3" type="Area2D" parent="."]
+position = Vector2(2096, 654)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpToArea3"]
+position = Vector2(73.5, -158)
+shape = SubResource("RectangleShape2D_qstxj")
+
 [connection signal="area_entered" from="Madeira/DetectAttack" to="Madeira" method="_on_detect_attack_area_entered"]
+[connection signal="area_entered" from="WarpToArea3" to="PlayerHandler" method="_on_warp_to_area_3_area_entered"]
