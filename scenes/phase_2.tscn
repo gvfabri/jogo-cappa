@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ywj05yo3ej26"]
+[gd_scene load_steps=52 format=3 uid="uid://ywj05yo3ej26"]
 
 [ext_resource type="Texture2D" uid="uid://cthsgv7jc4axt" path="res://images/images/fundo.png" id="1_ldoaj"]
 [ext_resource type="Texture2D" uid="uid://drkq7erwa4sw3" path="res://images/images/chaopiso.png" id="2_iywdy"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://blxw21reeuj4k" path="res://characters/Clamper.tscn" id="21_2a5xe"]
 [ext_resource type="Texture2D" uid="uid://boryosgnhwcfr" path="res://images/images/esmeralda.png" id="22_21raw"]
 [ext_resource type="Texture2D" uid="uid://ca1ijynbp73v5" path="res://images/images/oreLightTexture.png" id="23_c1xb8"]
+[ext_resource type="AudioStream" uid="uid://byx5gsban1tk5" path="res://music/back-to-the-volcano-castle-free-halloween-music-scloudtomp3downloader.com_(chosic.com).mp3" id="25_a20y2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s1cx"]
 texture = ExtResource("1_ldoaj")
@@ -173,6 +174,9 @@ polygon = PackedVector2Array(0, -17, -11, 0, 0, 16)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0ae06"]
 polygon = PackedVector2Array(9, 15, 9, -16, 15, -23, 14, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2f6j"]
+size = Vector2(66, 235)
 
 [node name="Main" type="Node2D"]
 
@@ -445,4 +449,16 @@ occluder = SubResource("OccluderPolygon2D_0ae06")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.050999, 0.00261212, 0.180083, 1)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_a20y2")
+autoplay = true
+
+[node name="WarpToArea3" type="Area2D" parent="."]
+position = Vector2(2142, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpToArea3"]
+position = Vector2(14, -14.5)
+shape = SubResource("RectangleShape2D_h2f6j")
+
 [connection signal="area_entered" from="Madeira/DetectAttack" to="Madeira" method="_on_detect_attack_area_entered"]
+[connection signal="area_entered" from="WarpToArea3" to="PlayerHandler" method="_on_warp_to_area_3_area_entered"]

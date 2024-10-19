@@ -1,6 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://b4gnrsgrfhpnd"]
+[gd_scene load_steps=43 format=3 uid="uid://b4gnrsgrfhpnd"]
 
-[ext_resource type="Texture2D" uid="uid://dbjixii13jfpn" path="res://images/images/Fundo.png" id="1_r1odl"]
+[ext_resource type="Texture2D" uid="uid://cthsgv7jc4axt" path="res://images/images/Fundo.png" id="1_r1odl"]
 [ext_resource type="Texture2D" uid="uid://dccxhb5jopggv" path="res://images/images/cavetiles.png" id="1_ueyp3"]
 [ext_resource type="Texture2D" uid="uid://dk8hqgmpt6qif" path="res://images/images/chaoterra.png" id="2_80oj0"]
 [ext_resource type="Texture2D" uid="uid://c4v1bccsv8b5d" path="res://images/images/skytiles.png" id="3_526a7"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://blxw21reeuj4k" path="res://characters/Clamper.tscn" id="6_l67ct"]
 [ext_resource type="Texture2D" uid="uid://cnwkhwwb6b5ta" path="res://images/images/tree3.png" id="7_csnq8"]
 [ext_resource type="Texture2D" uid="uid://cgqp3i5igmoly" path="res://images/images/tree4.png" id="8_brtyd"]
-[ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/AnimalEscape.png" id="10_xuug4"]
+[ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/images/AnimalEscape.png" id="10_xuug4"]
 [ext_resource type="Texture2D" uid="uid://cdc6illp37lor" path="res://images/images/tree.png" id="11_gevwu"]
 [ext_resource type="Script" path="res://scripts/Bricks.gd" id="11_gfxss"]
 [ext_resource type="Script" path="res://scenes/Webs.gd" id="11_smvpy"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5hlmprribf5" path="res://images/images/LightTexture.png" id="17_io0xb"]
 [ext_resource type="Script" path="res://scenes/lightBarrel.gd" id="18_3f1x6"]
 [ext_resource type="Script" path="res://scenes/animal_escape.gd" id="20_pxuc6"]
+[ext_resource type="AudioStream" uid="uid://bc5lql2eckyvi" path="res://music/dark-forest(chosic.com).mp3" id="21_hon6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl3qf"]
 size = Vector2(38, 35)
@@ -393,6 +394,10 @@ script = ExtResource("20_pxuc6")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.050999, 0.00261212, 0.180083, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_hon6y")
+autoplay = true
 
 [connection signal="area_entered" from="Light/Area2D" to="Light" method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Light/Area2D" to="AnimalEscape" method="_on_area_2d_area_entered"]
