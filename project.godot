@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="GameRex2024Project"
+config/name="Way of Revival"
+config/description="Para encontrar o caminho você precisará da ajuda (e dos sacrificios) de seus companheiros!
+Mas não se preocupe! Eles reviverão a cada estágio!"
+config/version="0.0.1"
 run/main_scene="res://scenes/phase_selector.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://WayOfRevival_Icon.png"
 
 [dotnet]
 

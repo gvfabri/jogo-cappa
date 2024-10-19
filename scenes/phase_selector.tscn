@@ -36,6 +36,18 @@ offset_bottom = 200.0
 text = "Estágio 3
 (WIP)"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 55.0
+offset_top = 146.0
+offset_right = 278.0
+offset_bottom = 244.0
+bbcode_enabled = true
+text = "[color=black]GAMEREX UNIFESP 2024
+Gabriel Fabri
+Gustavo dos Santos Ferreira
+Gustavo Soares de Lima
+[/color]"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
