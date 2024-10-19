@@ -209,14 +209,12 @@ collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Webs/StaticBody2D"]
 position = Vector2(0.177391, -1.56277)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bjgeb")
 
 [node name="Hurtbox" type="Area2D" parent="Webs"]
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Webs/Hurtbox"]
 position = Vector2(0.177391, -1.56277)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bjgeb")
 
 [node name="Bricks" type="Node2D" parent="."]
