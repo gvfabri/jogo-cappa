@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -600.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@onready var jump_sfx = $jump_sfx
 @onready var camera = $Camera2D
 @onready var players = [$PlayerCharacter, $PlayerSpear, $PlayerTorch, $PlayerBomb]
 var selected_player
@@ -14,7 +15,7 @@ var selected_player
 func _ready():
 	selected_player = 0
 
-func _process(delta):
+func _process(_delta):
 	camera.transform = players[selected_player].transform
 	if Input.is_action_just_pressed("Restart"):
 		reset_stage()
@@ -40,7 +41,7 @@ func _physics_process(delta):
 	if not player.is_on_floor():
 		player.velocity.y += gravity * delta
 
-	player.jump()
+	player.jump(jump_sfx)
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("Move_Left", "Move_Right")
@@ -73,7 +74,7 @@ func change_player(num):
 func free_char(selected_char):
 	var temp = selected_char
 	var next_player = null
-	next_player = await find_non_null_player(selected_char)
+	next_player = find_non_null_player(selected_char)
 	if players[next_player] == null:
 		reset_stage()
 	await get_tree().create_timer(1).timeout
@@ -82,6 +83,6 @@ func free_char(selected_char):
 	change_player(next_player)
 
 
-func _on_warp_to_area_2_area_entered(area):
+func _on_warp_to_area_2_area_entered(_area):
 	print("Warp!")
 	get_tree().change_scene_to_file("res://scenes/phase_2.tscn")

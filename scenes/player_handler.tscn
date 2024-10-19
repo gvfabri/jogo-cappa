@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjlyn8d487vei"]
+[gd_scene load_steps=7 format=3 uid="uid://cjlyn8d487vei"]
 
 [ext_resource type="Script" path="res://scripts/PlayerHandler.gd" id="1_qbs0b"]
 [ext_resource type="PackedScene" uid="uid://cxexjis4lgnpt" path="res://characters/PlayerCharacter.tscn" id="2_p53yw"]
 [ext_resource type="PackedScene" uid="uid://bayn8vavaumm7" path="res://characters/PlayerSpear.tscn" id="3_2bxid"]
 [ext_resource type="PackedScene" uid="uid://bhj5tvhg5qgit" path="res://characters/PlayerBomb.tscn" id="4_rkrxv"]
 [ext_resource type="PackedScene" uid="uid://doyn3wx46i7x0" path="res://characters/PlayerTorch.tscn" id="5_2t4tu"]
+[ext_resource type="AudioStream" uid="uid://bj1131tyy1bbe" path="res://sounds/Jump5.wav" id="6_52plg"]
 
 [node name="PlayerHandler" type="Node2D"]
 script = ExtResource("1_qbs0b")
@@ -22,3 +23,6 @@ position = Vector2(-32, 0)
 
 [node name="PlayerBomb" parent="." instance=ExtResource("4_rkrxv")]
 position = Vector2(-48, 0)
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_52plg")

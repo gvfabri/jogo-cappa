@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlyivu1p8ewim"]
+[gd_scene load_steps=10 format=3 uid="uid://dlyivu1p8ewim"]
 
 [ext_resource type="Script" path="res://scripts/spear_attack.gd" id="1_mvkfy"]
 [ext_resource type="Script" path="res://scripts/Attack.gd" id="2_4vc83"]
 [ext_resource type="Texture2D" uid="uid://bhq4l217cgu4o" path="res://images/AnimalEscape.png" id="3_j4kw2"]
+[ext_resource type="AudioStream" uid="uid://b0uhu4r8n7g3u" path="res://sounds/Hit_Hurt3.wav" id="4_6q7s0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m1oau"]
 
@@ -54,5 +55,8 @@ autostart = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k0u2l")
 frame_progress = 0.816165
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6q7s0")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

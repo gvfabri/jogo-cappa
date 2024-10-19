@@ -9,9 +9,9 @@ func _ready():
 	pass # Replace with function body.
 
 func die():
-	var inst = await rochas.instantiate()
+	var inst = rochas.instantiate()
 	main.add_child(inst)
-	var explosion = await explosion.instantiate()
+	var explosion = explosion.instantiate()
 	explosion.spawn_pos = self.global_position + Vector2(0, 20)
 	main.add_child(explosion)
 	queue_free()

@@ -18,11 +18,6 @@ var dead = false
 func _ready():
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func get_sprite():
 	return sprite
 
@@ -31,9 +26,10 @@ func use_item():
 		return
 	item.useItem(self)
 
-func jump():
+func jump(jump_sfx):
 	# Handle jump.
 	if Input.is_action_just_pressed("Move_Up") and is_on_floor():
+		jump_sfx.play()
 		velocity.y = jump_height
 
 func die():

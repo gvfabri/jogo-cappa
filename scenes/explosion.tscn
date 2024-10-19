@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0gqhwoo2pmnv"]
+[gd_scene load_steps=10 format=3 uid="uid://c0gqhwoo2pmnv"]
 
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="1_3cn8m"]
 [ext_resource type="Script" path="res://scripts/Attack.gd" id="2_2au46"]
 [ext_resource type="Texture2D" uid="uid://ttbj3rk1r072" path="res://images/AnimalEscape_Boss.png" id="3_snofm"]
+[ext_resource type="AudioStream" uid="uid://b6d4jnk3ytuc6" path="res://sounds/Explosion2.wav" id="4_n6fhu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_liec2"]
 
@@ -54,5 +55,8 @@ autostart = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dno87")
 frame_progress = 0.977383
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n6fhu")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
